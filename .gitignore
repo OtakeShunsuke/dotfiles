@@ -1,0 +1,31 @@
+# 全てのファイルを無視する
+/*
+/.**
+
+# 必要なファイルだけホワイトリスト形式で追記
+!/.aliases.sh
+!/.bash_profile
+!/.bashrc
+!/.Brewfile
+!/.gitconfig
+!/.tmux.conf
+!/.vimrc
+!/.Xmodmap
+!/.zshrc
+!/.zshrc_Darwin.zsh
+!/.zshrc_Linux.zsh
+!/plugins.toml
+!/starship.toml
+
+!/.github/
+.github/**
+!/.github/workflows/
+!/.github/workflows/main.yml
+!/bin/
+!/img/
+!/ref/
+!/.gitignore
+!/docker-compose.yml
+!/Dockerfile
+!/Makefile
+!/README.md

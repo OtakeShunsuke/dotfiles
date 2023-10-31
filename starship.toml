@@ -1,0 +1,94 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = '$status$all'
+
+[aws]
+disabled = true
+
+[battery]
+disabled = true
+
+[character]
+disabled = true
+error_symbol = '[✗](bold red) '
+success_symbol = '[❯](bold green) '
+
+[cmd_duration]
+format = '[ $duration]($style)'
+
+[container]
+format = '[$symbol]($style)'
+style = 'blue bold'
+symbol = '🐳'
+
+[dart]
+symbol = ' '
+
+[directory]
+truncation_length = 8
+
+[docker_context]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[git_branch]
+ignore_branches = ['master', 'main']
+
+[git_commit]
+commit_hash_length = 4
+tag_disabled = true
+
+[git_metrics]
+added_style = 'green'
+deleted_style = 'red'
+disabled = false
+format = '(\[([+$added]($added_style))([-$deleted]($deleted_style))\] )'
+
+[git_status]
+ahead = '⇡${count}'
+behind = '⇣${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+
+[os]
+disabled = true
+style = "white"
+
+[os.symbols]
+Macos = "🍎"
+Ubuntu = "linux"
+
+[python]
+format = 'via [${symbol}](yellow)[${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+symbol = "🐍"
+version_format = "${raw}"
+
+[shell]
+bash_indicator = ' \$'
+disabled = false
+zsh_indicator = ' %'
+
+[status]
+disabled = false
+format = '[$symbol$common_meaning$signal_name$maybe_int]($style) '
+map_symbol = true
+success_symbol = '[✓](bold green)'
+symbol = '[✗](bold red)'
+pipestatus = true
+
+[sudo]
+disabled = false
+format = '[$symbol]($style)'
+style = 'bold green'
+symbol = '⚠'
+
+[custom.gpu]
+# Zshでは`%`がエスケープシーケンス
+command = "[ -n \"$ZSH_VERSION\" ] && nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits | tr '\n' ' ' | sed 's/[0-9]\\+/&%%/g' || nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits | tr '\n' ' ' | sed 's/[0-9]\\+/&%/g'"
+description = 'The usage rate of the NVIDIA GPU'
+when = ' type nvidia-smi && (ls *.py || ls *.ipynb)'
+format = 'on [$symbol $output]($style) '
+style = 'bold purple'
+symbol = 'GPU'
