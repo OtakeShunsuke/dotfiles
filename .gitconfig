@@ -1,0 +1,10 @@
+[user]
+	name = ShunsukeOtake
+	email = s.ootake.f3@icloud.com
+[alias]
+	ci = commit
+	st = status
+	co = checkout
+	br = branch
+[include]
+    path = .gitconfig.local
