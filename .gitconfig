@@ -8,3 +8,5 @@
 	br = branch
 [include]
     path = .gitconfig.local
+[credential]
+	helper = "!f() { /root/.vscode-server/bin/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/node /tmp/vscode-remote-containers-8e303eac-1461-4de2-9354-91999da45022.js git-credential-helper $*; }; f"
